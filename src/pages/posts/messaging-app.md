@@ -1,8 +1,8 @@
 ---
-title: "How to build a real-time movie voting system using React.js 🤯"
-description: "We're excited to announce Astro as a new way to build static websites and deliver lightning-fast performance without sacrificing a modern developer experience."
-pubDate: "2021-06-08"
-hero: "/images/snatch.jpeg"
+title: "How to build a messaging application in React 🤯"
+description: "Build production grade messaging application using React + Chakra UI + Rocketgraph"
+pubDate: "2023-08-03"
+hero: "/images/low-res-dashboard.gif"
 tags: ["astro"]
 layout: "../../layouts/BlogPostLayout.astro"
 ---
