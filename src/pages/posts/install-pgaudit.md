@@ -1,8 +1,8 @@
 ---
 title: "Install pgAudit in your AWS RDS instance"
 description: "Install and enable pgAudit in AWS RDS instance for logging your Postgres events"
-pubDate: "2023-08-20"
-hero: "/images/low-res-dashboard.gif"
+pubDate: "2023-08-21"
+hero: "/images/rocketgraph-logs.gif"
 tags: ["astro"]
 layout: "../../layouts/BlogPostLayout.astro"
 ---
