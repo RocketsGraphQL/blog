@@ -79,7 +79,7 @@ Follow this video for setting up your DB Parameter group, installing pgAudit and
 
 To load pgAudit, you need to configure the DB Parameter group to the following:
 
-Set pgaudit.loog to `none`, we'll change this later from psql:
+Set pgaudit.log to `none`, we'll change this later from psql:
 <img title="a title" alt="Alt text" src="../../../public/images/rds/log.png">
 
 Load shared libraries via `shared_preload_libraries`:
@@ -97,7 +97,7 @@ Restart the instance and you should be able to use pgAudit
 
 Log into your RDS using psql using
 
-```bash
+```sql
 psql postgresql://postgres:password@small-sound.czei94v3hlkf.us-east-2.rds.amazonaws.com:5432/postgres
 
 ```
@@ -110,13 +110,13 @@ postgres=> CREATE ROLE rds_pgaudit;
 
 Check that the libraries are loaded
 
-```bash
+```sql
 postgres=> show shared_preload_libraries;
 ```
 
 Then enable the extension
 
-```bash
+```sql
 postgres=> CREATE EXTENSION pgaudit;
 ```
 
@@ -124,13 +124,13 @@ Enable logs for pgAudit
 
 For now, for testing purposes set log level to CREATE
 
-```bash
+```sql
 postgres=> ALTER DATABASE test_database set pgaudit.log="CREATE"; 
 ```
 
 But ideally, it should be
 
-```bash
+```sql
 postgres=> ALTER DATABASE test_database set pgaudit.log="ALL"; 
 ```
 
@@ -138,7 +138,7 @@ postgres=> ALTER DATABASE test_database set pgaudit.log="ALL";
 
 In the psql shell
 
-```bash
+```sql
 postgres=> CREATE TABLE test_table (id int);
 postgres=> SELECT * FROM test_table;
 ```
@@ -157,3 +157,5 @@ and check that the logs are reflected by clicking view on the latest written log
 Alternatively you can create a project using Rocketgraph that comes with pgAudit enabled. You just need to do step 9. And once you create extension, you can see all your logs nicely like this:
 
 <img title="a title" alt="Alt text" src="../../../public/images/rocketgraph-logs.gif">
+
+You can check out the [demo here](https://rocketgraph.io/logger-demo)
